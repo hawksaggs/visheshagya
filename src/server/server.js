@@ -38,6 +38,8 @@ app.use(render)
 
 
 
-app.listen(config.http.port, function() {
+var server=app.listen(config.http.port, function() {
     logger('app:start')('Listening on port ' + config.http.port)
-})
+});
+console.log(server);
+var io=require('socket.io').listen(server);

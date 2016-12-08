@@ -8,8 +8,13 @@ import Logout from '../components/account/Logout'
 import Register from '../components/account/Register'
 import NotFound from './NotFound'
 import Menu from '../components/common/Menu'
+import io from 'socket.io-client'
+
+
 
 class App extends React.Component {
+    
+
     render() {
         const { stores } = this.props
 

@@ -2,10 +2,17 @@ import React from 'react'
 import { observer } from 'mobx-react'
 import Loading from '../common/Loading'
 import Error from '../common/Error'
+import io from 'socket.io-client'
 
 @observer(['account'])
 class Login extends React.Component {
-
+  componentWillMount() {
+    this.socket=io('http://localhost:2000');
+    this.socket.on('connect',this.connect);
+  }
+  connect(){
+    console.log("Connected");
+  }
     // When route is loaded (isomorphic)
     static onEnter({ common }) {
         common.title = 'Login'

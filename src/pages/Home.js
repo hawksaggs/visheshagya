@@ -15,7 +15,7 @@ class Home extends React.Component {
     render() {
         const { todos } = this.props
         return <main>
-            <h1>todos</h1>
+            <h1>Notes</h1>
             <div className="home">
                 <AddTodo/>
                 <section className="main">
